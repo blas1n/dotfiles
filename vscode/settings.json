@@ -1,0 +1,14 @@
+{
+    "chat.disableAIFeatures": true,
+    "workbench.colorTheme": "GitHub Dark",
+    "editor.autoIndentOnPaste": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.fontFamily": "Hack Nerd Font",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "terminal.external.osxExec": "iTerm.app"
+}

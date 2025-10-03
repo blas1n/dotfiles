@@ -1,0 +1,27 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+        force: true
+
+- clean: ['~']
+
+- shell:
+    - command: |
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
+      description: Install Oh-My-Zsh
+      stdout: true
+      stderr: true
+
+- brewfile:
+    file: Brewfile
+    stdout: true
+    stderr: true
+    include: ['tap', 'brew', 'cask', 'mas', 'vscode']
+
+- link:
+    ~/.zshrc: config/zshrc
+    ~/.gitconfig: config/gitconfig
+    ~/.config/karabiner/karabiner.json: config/karabiner.json
+    ~/.config/neofetch/config.json: config/neofetch.json
+    ~/Library/Application Support/Code/User/settings.json": vscode/settings.json
