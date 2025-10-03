@@ -14,7 +14,7 @@
       stderr: true
 
 - brewfile:
-    file: Brewfile
+    file: BrewFile
     stdout: true
     stderr: true
     include: ['tap', 'brew', 'cask', 'mas', 'vscode']
