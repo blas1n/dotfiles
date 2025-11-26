@@ -1,15 +1,15 @@
 tap "pomdtr/tap"
-brew "curl"
+brew "curl" if OS.mac?
 brew "gh"
-brew "git"
+brew "git" if OS.mac?
 brew "gzip"
-brew "htop"
+brew "htop" if OS.mac?
 brew "jq"
 brew "mas"
 brew "neofetch"
 brew "nvm"
 brew "tree"
-brew "wget"
+brew "wget" if OS.mac?
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 cask "1password"
