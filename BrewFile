@@ -1,7 +1,7 @@
 tap "pomdtr/tap"
-brew "curl", args: ["force-bottle"]
+brew "curl"
 brew "gh"
-brew "git", args: ["force-bottle"]
+brew "git"
 brew "gzip"
 brew "htop"
 brew "jq"
@@ -9,7 +9,7 @@ brew "mas"
 brew "neofetch"
 brew "nvm"
 brew "tree"
-brew "wget", args: ["force-bottle"]
+brew "wget"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 cask "1password"
