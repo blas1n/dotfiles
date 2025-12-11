@@ -115,8 +115,16 @@ source "$(brew --prefix nvm)/nvm.sh"
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/blasin/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
