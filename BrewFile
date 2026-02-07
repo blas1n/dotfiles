@@ -9,6 +9,8 @@ brew "mas"
 brew "neofetch"
 brew "nvm"
 brew "tree"
+brew "tmux"
+brew "tailscale"
 brew "wget" if OS.mac?
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
