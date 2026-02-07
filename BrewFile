@@ -4,6 +4,7 @@ brew "gh"
 brew "git" if OS.mac?
 brew "gzip"
 brew "jq"
+brew "docker"
 brew "neofetch"
 brew "nvm"
 brew "tree"
