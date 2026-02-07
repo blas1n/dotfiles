@@ -8,14 +8,12 @@ Personal development environment configuration managed with [Dotbot](https://git
 - 🔗 Efficient management via symbolic links
 - 🔄 Version-controlled Dotbot via Git submodule
 - 🍺 Homebrew package management with Brewfile
-- 🐳 Dev Container integration support
-- 💻 Mac and Linux support
+- 🖥️ Server environment optimized
 
 ## 📦 What's Included
 
 - `.zshrc` - Zsh shell configuration
 - `.gitconfig` - Git global settings
-- `.settings` - VS Code settings
 - `Brewfile` - Homebrew package list
 
 ## 🚀 Quick Start
@@ -55,7 +53,7 @@ The install script automatically performs the following:
 - Backs up existing configuration files
 - Creates symbolic links
 - Creates necessary directories
-- Installs Homebrew packages from Brewfile (Mac only)
+- Installs Homebrew packages from Brewfile
 - Executes additional shell commands
 
 ## 🔧 Usage
@@ -112,9 +110,6 @@ brew bundle
 The Brewfile includes:
 - **tap** - Homebrew taps
 - **brew** - Command-line tools
-- **cask** - GUI applications
-- **mas** - Mac App Store apps
-- **vscode** - VS code extensions
 
 ### Updating Dotbot
 
@@ -136,9 +131,6 @@ git commit -m "Update Dotbot plugins"
 ├── Brewfile                 # Homebrew packages
 ├── config/zshrc             # Zsh configuration
 ├── config/gitconfig         # Git configuration
-├── config/karabiner.json    # Karabiner configuration
-├── config/neofetch.json     # Neofetch configuration
-├── ray.rayconfig            # Raycast configuration (You cannot use it!)
 └── README.md                # This file
 ```
 
@@ -186,15 +178,6 @@ services:
     # This file can be gitignored
 ```
 
-Or use VS Code's personal settings. Add to your **User Settings** (not workspace):
-
-```json
-{
-  "dev.containers.defaultExtensions": [],
-  "terminal.integrated.shellArgs.linux": ["-c", "test -d ~/.dotfiles || (git clone https://github.com/blAs1N/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install)"]
-}
-```
-
 ### Option 2: Manual Setup in Container
 
 After the container starts:
@@ -217,44 +200,6 @@ If you want to make it available but optional for your team, add to `Dockerfile`
 #     && cd /home/vscode/.dotfiles \
 #     && ./install
 ```
-
-### Option 4: Personal dotfiles Configuration
-
-VS Code has built-in dotfiles support! Add to your **User Settings**:
-
-```json
-{
-  "dotfiles.repository": "blAs1N/dotfiles",
-  "dotfiles.targetPath": "~/.dotfiles",
-  "dotfiles.installCommand": "~/.dotfiles/install"
-}
-```
-
-This automatically clones and installs your dotfiles in any dev container!
-
-### Skip Brewfile in Containers
-
-If you want to skip Homebrew installation in dev containers, modify `install.conf.yaml`:
-
-```yaml
-- brewfile:
-    file: Brewfile
-    stdout: true
-    stderr: true
-    # Only run on macOS
-    if: '[ "$(uname)" = "Darwin" ]'
-```
-
-Or create a separate `install-container.conf.yaml` without the brewfile section.
-
-## ⚠️ Raycast Configuration Note
-
-Raycast currently does not support automatic import via CLI.
-
-**Manual import method:**
-1. Open Raycast (⌘ + Space)
-2. Search for "Import"
-3. Select `~/.dotfiles/ray.rayconfig`
 
 ## 🛠️ Troubleshooting
 
@@ -296,13 +241,6 @@ cd ~/.dotfiles
 brew bundle
 ```
 
-### Dev Container Dotfiles Not Loading
-
-Check that:
-1. Git is available in the container
-2. You have network access to clone the repository
-3. The install script has execute permissions (`chmod +x install`)
-
 ## 🔐 Security
 
 Do not include sensitive information (tokens, passwords, etc.) in your dotfiles!
@@ -323,7 +261,6 @@ Use environment variables or separate files for sensitive data.
 - [Dotbot Configuration Examples](https://github.com/anishathalye/dotbot/wiki/Configuration)
 - [dotbot-brewfile Plugin](https://github.com/sobolevn/dotbot-brewfile)
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
-- [VS Code Dev Containers Dotfiles](https://code.visualstudio.com/docs/devcontainers/containers#_personalizing-with-dotfile-repositories)
 
 ## 📝 License
 

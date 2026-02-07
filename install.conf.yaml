@@ -22,6 +22,4 @@
 - link:
     ~/.zshrc: config/zshrc
     ~/.gitconfig: config/gitconfig
-    ~/.config/karabiner/karabiner.json: config/karabiner.json
     ~/.config/neofetch/config.json: config/neofetch.json
-    ~/Library/Application Support/Code/User/settings.json": vscode/settings.json
