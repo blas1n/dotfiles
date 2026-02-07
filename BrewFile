@@ -5,6 +5,8 @@ brew "git" if OS.mac?
 brew "gzip"
 brew "jq"
 brew "docker"
+brew "docker-compose"
+brew "colima"
 brew "neofetch"
 brew "nvm"
 brew "tree"
